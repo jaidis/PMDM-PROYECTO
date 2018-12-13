@@ -20,7 +20,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         all {
-            buildConfigField("String", "URL_SERVER", "\"https://localhost/\"")
+            buildConfigField("String", "URL_SERVER", "\"http://192.168.12.56\"")
         }
     }
 }

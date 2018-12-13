@@ -12,8 +12,14 @@ import android.view.MenuItem
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import android.os.StrictMode
+
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    companion object {
+        lateinit var prefs: Prefs
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +43,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         nav_view.setNavigationItemSelectedListener(this)
 
         disableFab()
+
+        // TODO: Asignamos las preferencias, en este caso cargar/guardar los tokens
+        prefs = Prefs(applicationContext)
 
         supportFragmentManager
                 .beginTransaction()
